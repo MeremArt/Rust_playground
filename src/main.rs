@@ -1,5 +1,7 @@
 use std::io;
 mod my_module;
+use std::io::Write;
+mod convert_temp;
 fn main() {
 //     let sum:i32 = my_function(11, 22);
 //   println!("the sum is: {}",sum)
@@ -8,7 +10,7 @@ fn main() {
 
 // for_loop() 
 
-
+convert_temp::convert_it()
 
 }
 fn my_function(x: i32, y:i32) -> i32 {

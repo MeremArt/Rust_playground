@@ -1,7 +1,7 @@
 use std::io;
 use std::io::Write;
 
-fn main() {
+pub fn convert_it() {
     loop {
         println!("Temperature Conversion:");
         println!("1. Fahrenheit to Celsius");
