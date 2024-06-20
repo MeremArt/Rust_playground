@@ -1,16 +1,18 @@
 use std::io;
+use sha2::{Digest, Sha256};
+use std::fmt;
+use std::time::{SystemTime, UNIX_EPOCH};
+use std::thread;
+use std::time::Duration;
+use chrono::{NaiveDateTime, DateTime, Utc};
 mod my_module;
 use std::io::Write;
 mod convert_temp;
+mod blockchain_mining;
 fn main() {
-//     let sum:i32 = my_function(11, 22);
-//   println!("the sum is: {}",sum)
-// array_game()
-// my_module::public_function();
 
-// for_loop() 
 
-convert_temp::convert_it()
+blockchain_mining::main_block();
 
 }
 fn my_function(x: i32, y:i32) -> i32 {
@@ -70,7 +72,7 @@ fn print_value(x: &i32) {
     println!("Value: {}", x);
 }
 
-fn main() {
+fn _immutable() {
     let value = 10;
     let value_ref = &value; // Immutable borrow
     print_value(value_ref); // Pass the immutable reference to the function
@@ -81,7 +83,7 @@ fn increment_value(x: &mut i32) {
     *x += 1;
 }
 
-fn main() {
+fn _mutable() {
     let mut value = 10;
     {
         let value_ref = &mut value; // Mutable borrow
