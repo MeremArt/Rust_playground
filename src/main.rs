@@ -65,3 +65,27 @@ fn get_input(prompt: &str) -> f64 {
         }
     }
 }
+
+fn print_value(x: &i32) {
+    println!("Value: {}", x);
+}
+
+fn main() {
+    let value = 10;
+    let value_ref = &value; // Immutable borrow
+    print_value(value_ref); // Pass the immutable reference to the function
+    println!("Original value: {}", value); // Can still use `value` directly
+}
+
+fn increment_value(x: &mut i32) {
+    *x += 1;
+}
+
+fn main() {
+    let mut value = 10;
+    {
+        let value_ref = &mut value; // Mutable borrow
+        increment_value(value_ref); // Pass the mutable reference to the function
+    } // Mutable borrow ends here
+    println!("Incremented value: {}", value); // Now we can use `value` again
+}
